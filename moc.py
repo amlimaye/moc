@@ -14,7 +14,7 @@ def main():
     #set some constants
     nBalls = 15
     nBins = 50
-    nShuffles = 10000
+    nShuffles = 15000
 
     #initialize stars and bars list and counts list
     starsAndBars = [STAR for _ in range(nBalls)] + [BAR for _ in range(nBins-1)]
@@ -55,7 +55,7 @@ def main():
     plt.plot(x,logHist,'bo-',label='Sampled')
     plt.plot(x,importanceSampled,'go-',label='Importance Sampled')
     plt.plot(x,boltzmann,'k--',label='Boltzmann')
-    plt.plot(x,theory,'r.-',label='Theory')
+    plt.plot(x,theory,'r.-',label='Theory (Stirling\'s Approximation)')
     plt.xlabel(r'$x$')
     plt.ylabel(r'$\log\,\mathrm{Pr}\,(n_1 = x)$')
     plt.legend(framealpha=0,loc='upper right')
